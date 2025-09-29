@@ -1,0 +1,14 @@
+A simplified formal definition of a game can look as follows:
+
+Players (P, O)
+The current state of the game
+State transition actions
+
+In combat, the thing that we want to balance and make interesting is the state transition actions. We can explore a few scenarios, and see what ideas we come up with for actions players (and enemies!) can take. 
+
+Let's consider the following:
+
+1. The player has been spotted by a single, relatively weak enemy.
+2. The player has just entered a level. There are several enemies throughout, that can be engaged with one-on-one.
+3. The player is fighting a boss that has a lot of health.
+4. Two groups are fighting eachother.

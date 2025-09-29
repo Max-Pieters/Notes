@@ -1,0 +1,10 @@
+1. 
+    Bundle ID: com.chateau-buren.chateau-buren-app
+    Bundle ID2: com.ChateauVoorBuren.ChateauVoorBuren
+    SKU: 8ef3c537-43f2-4c28-81cf-5961e85d00e1
+    ID Prefix: N4PDZGC9FZ 
+
+2. Set up XCode
+
+
+-. Run "flutter build ipa"

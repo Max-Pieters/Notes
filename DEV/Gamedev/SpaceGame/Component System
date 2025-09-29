@@ -1,0 +1,56 @@
+Take inspiration from Gundam / mech games.
+
+Concept: First vs third person. Both are possible, which is better?
+Concept: Floaty vs. precise. 
+Concept: addaptive component sizes. The same component can be applied to different sized ships. 
+Concept: addaptive component counts. Components can have different numbered varients, but this has no effect (ie tri-wing vs bi-wing does not result in more weapons)
+
+Components of a ship should be editable in a UI. There should be a debug feature to access and quickly swap between all components.
+
+Ships consist of a collection of connected components. At it's center, the ship has a core component, from which all other components are connected hierarchically. Components are connected to eachother by connection points. The number of visual connections might different from the listed set of components, an example of which being two and three winged ships have one "wing" component, despite several wings being visible. Additionally, components are addaptive in size and how they connect to other components. Furthermore, to allow for visual consistency, some colour elements of components need to be dynamic and adjustable.
+
+Components can effect the overall stats of the ship. Some components, however, allow for specific abilities. The player can switch between these abilities to activate them. The player can organize the order in which these abilities appear. Some of these can be assigned to other buttons.
+
+
+Components include:
+
+Cores:
+    Starter
+    Battering ram
+    Tri-wing
+    Quadwing
+    Systems-heavy core    
+Weapons:
+    Laser (basic, multi-shot, burst, continuous)
+    Missile (unguided, homing, controllable)
+    Gravity gun (stop missiles, shoot ship parts)
+    Grappling Hook
+    Elemental (ice, fire, electric, eldritch, x) gun
+Wings:
+    Slow wings, with lots of components
+Engines:
+    Short, but frequent dashes
+    Double dash / no cooldown
+    Long dash, with long cooldown. 
+    Big ass engines that can fucking explode
+Systems (There are a lot of these. Maybe add these properties to other components?):
+    - Look to gimmick roguelikes like TBoI, Gungeon, and Rogue Lecacy for inspo.
+    Shields
+        Basic ass (blocks only lasers) 
+        Getting hit charges weapon
+        Low health -> more damage
+    Stealth
+    Teleport
+    Battering Ram
+    Grabber Arm
+    Suicide Bomb (Stupid)
+    Hacking
+    High viz scanner
+    Helper drone(s)
+    Radio interceptor
+    Music Soundsystem (Stupid, but fun)
+
+Cost systems potentially include:
+    Energy (total resource consumption)
+    Connection point (per point connections)
+    Weight / size (per point resource consumption)

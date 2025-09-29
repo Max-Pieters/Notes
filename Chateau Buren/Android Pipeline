@@ -1,0 +1,27 @@
+1. Generate signed app bundle
+    ChateauBurenKey
+    Tlfe9n(sYTc2[W^{:q,Q'+(`D#Qyc7
+    Max Pieters
+    APNext
+    Buren
+    Gelderland
+    NL
+
+2. Run the following powershell command in C:\Program Files\Android\Android Studio\jbr\bin:
+    .\keytool -genkey -v -keystore $env:USERPROFILE\upload-keystore.jks `
+        -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 `
+        -alias ChateauBurenKey
+
+3. Update password at [project]/android/key.properties
+
+4. Comment signing code in [project]/android/app/build.gradle
+
+5. Check if NDK version is correct
+
+6. Run "flutter build appbundle" in the android subfolder
+
+
+$ java -jar pepk.jar --keystore="C:\Users\Gebruiker\Documents\Keystore\chateau-buren.jks" --alias=ChateauBurenKey --output=output.zip --include-cert --rsa-aes-encryption --encryption-key-path=encryption_public_key.pem
+
+$ ./keytool -export -rfc -keystore "C:\Users\Gebruiker\Documents\Keystore\chateau-buren.jks" -alias ChateauBurenKey -file upload_certificate.pem
+

@@ -1,0 +1,110 @@
+REGIONS
+
+A region within Azure is a geographically distributed group of datacenters. Some regions have only one center. These centers tend to be near large business areas to ensure quick access. These are connected by Microsofts own private infrastructure. You can select which region you deploy your application into. Some features may be region specific. The price of a feature may vary slightly by region. 
+
+Region pairs  exist, where one region will act as a backup for that other region. These tend to be close together geographically. Currently, the one exception is Brasil South, which is connected to the US.
+
+    Example: North Europe is paired with West Europe
+
+Sovereign regions are very specific regions that exist speficially to provide data compliance. They can't be accessed as easily as other regions, require express approval to be used. They are not connected to Microsofts private network, and will not have all services available. 
+    - Azure For US Government is specifically for US Government services. The market place only contains Bring-Your-Own-License and PAy-As-You-Go process. Azure Pipelines are also not available. It hosted in physically different data centers. Hybrid entities do not exist.
+    - Azure For China is specifically for China, and are required to be used if you want to do business in China. You also need to physically be in China, or work with a local Chinese partner. 
+    - German Azure sovereign region. Is currently being deprecated.
+
+An availability zone is a specific data center, or cluster of datacenters. Microsoft guarenteees a maximum 2 millisecond latency between zones in a region. The primary advantage of multiple zones within a region is redundancy WITHIN A REGION. You have the ability to choose a specific zone within a region for certain services, notably virtual machine instances. Zone redundant services are automatically duplicated across services, usually at an additional cost.
+
+The Azure Region Explorer allows you to find information about specific regions. All with a fancy 3D map!
+
+Resources are grouped into, well, Resource Groups. Resources should be grouped by lifecycle and access control needs. All resources, and by extension Resource Groups, as grouped into Subscriptions. These are billing boundaries, which decide how much a tenant is charges. An organization might want to have multiple subscriptions, to seperate billing. Management groups are the highest level of resource organization. It is an optional centralized subscription management group. 
+
+Deployment tips:
+    - It is recommended that you deploy at least two VMs in two availability zones
+
+COMPUTE
+
+Azure Compute is an on-demand computing resource service. It is the engine that runs the actual code you provide Azure. 
+
+Virtual Machines are the heart and sould of cloud computing. It is a simulated computer / server. It has IP addresses. You can configure the size of CPU / RAM that a VM has. You can also configure the virtual disk size. Billing is done per minute that the compute resource is used. This means that when a VM is stopped, you are not charged for it.
+
+Disks are charged very differently. One will always be charged for the amount of disk space is alloated. The operating system is also billed in a pay-as-you-go model. IP addresses are charged by the hour. Dynamic IP addresses are not charged when the VM is deallocated, while static addresses are.
+
+VMs allow for a lot of control, but they are relatively expensive, and require a fair amount of effort on the developers end to maintain it.
+
+To deploy an Azure VM
+	• Go to "Create A Resource"
+	• Click "Create"
+	• Configure the VM
+     !     Don't use RDP 3389 for anything other than testing
+
+Connecting to a VM
+	• Go to "Connect" under the VM resource view
+	• Download the RDP file, which allows you to connect to the VM remotely
+
+Removing the VM
+	• Click "Delete" under the VM resource view
+
+Scale sets are groups of idential VMs with a load balancer. More clones are created as needed. VM clone count can be done both manually and automatically. This is a type of horizontal scaling. There is no additional cost to the scale set.
+
+Availability sets are groups of VMs with seperate fault and update domains. A fault domain is a hypervisor with a common power source and/or network switch. By extent, if one fails, all will have failed. Update domains are groups of hypervisors and VMs that can be updated at the same time. Adding VMs to an availability set ensures that they are on seperate, diverse hypervisors, and results in high availability and security. Availability sets are important for VMs that perform different functions from eachother.
+
+Azure Virtual Desktop is a centralized method for having standardized environments for developing within Azure. It can be accessed from anywhere, and is independent of hardware. It is significantly mroe data complient and convenient for users.
+
+An app service is a fully managed application hosting environment with minimal overhead. It can be thought of as a simplified VM. Web applications are the main use case for app services. They can include WebJobs, which are background tasks for application logic. It can host REST Apis.
+
+Creating an App Service
+	• Click "App Services"
+	• Click "Create"
+	• Select the type of application we would like to create
+	• Input a globally unique name
+	• Configure the App Service
+
+Azure Functions are the smallest compute service in Azure. It is exactly what it sounds like. It runs a single function, once, and then stops. It still runs on a VM, but you do not maintain it yourself. It is a serverless service. It runs only when needed.
+
+Azure Logic Apps is a web based designed to execute logic within Azure without writing any code. It can run for specific events or criteria.
+
+Containers are essentailly a lightweight version of VMs that don't model hardware. They are more lightweight and portable. It is essentially a virtualized operating system. Azure Container Instance is the fastest way to deploy a single container, but limited in power and flexibility. Azure Kubernetes Service has great scaling and control, but is expensive. Azure Container Apps is a good combination of both, but a little less flexible than AKS.
+
+Virtual networks are private isolated networks within Azure. They are what the VMs and other services use to communication safely and securely. It will have a subnet, which is the range of IP ranges that are used in the network. Networking is defined by software, meaning that you only work with abstracted representations of the network.
+
+Network security groups allow you to define security rules for subnets. You can define in/out bound filters, which protocols are allowed, permitted destinations, traffic types, etc. An Azure Firewall is a more comprehensive solution, and can apply to multiple virtual nets. It also provides some advanced features, but is pretty expensive. Azure Bastion allows you connect to VMs without a public IP. 
+
+Network Peering allows connecting virtual networks across. A good use case for this is connecting networks across different regions.
+
+A DNS matches a URL to an IP address. For a public website, an Authoritative Name Server resolves the location. A private DNS server does not have the same authentication, since the user is expected to handle this.
+
+Hybrid Networking is the connecting of trusted external networks over private IP networking. This is the basis of a VPN. Site-to-Site (S2S) is for connecting to networks. Point-to-Site (P2S) is for connecting a network to an indicvidual computer. Finally, ExpressRoute allows for direct private connections to Microsoft services. The foundation of all of these are Virtual Network Gateways.  
+
+An Azure VPN allows for connecting VNs. It works on the public internet, and therefor uses encryption. It is more limited bandwidth, and can cost more than regular peering. A route-based VPN has more capabilities, and a policy-based VPN is more backwards compatible. A VPN can have active-standy, where it only has a single tunnel, or active-active, where it uses two active tunnels.
+
+ExpressRoute are private, fast connections to the Microsoft Cloud. It typically uses a third party to connect your own network with Microsoft. It is substantially faster and more private, but therefor also more expensive and permanent.
+
+An endpoint is the exposed part of the network that can recieve incoming traffic. A public endpoint is open to the internet. Private endpoints are only accessed within the network.
+
+Storage
+
+Azure Storage consists of a management layer, as well as various storage services. A storage account name must be gobally unique across Azure. Storage services include:
+
+Blob Storage
+An unstructured store, that exclusively contains binary streams. Each blob has a unique web address, which can be private or public. Blob types include blocks for general use, append for append operations (such as logs), and page for random access.
+
+Blob Storage also has hot, cool, cold, and archive storage. These have a minimum storage length, with a fee for when this data is deleted earlier. Archive storage is VERY cold, taking a long time to fetch this data.
+
+Azure Files
+A cloud based file storage service.
+
+Azure Queues
+A queue. Within Azure. Nuff said. 
+
+Azure Tables
+A NoSQL database service. It is more flexible than relational databases, but can't allow for complex joining and filtering. It is currently transitioning to CosmosDB.
+
+Azure Disks
+Disks are the storage mechanism for VMs, backed by Azure Storage. Disk types include HDD, Standard SSD, Premium SSD, Premium SSD v2, and Ultra Disks. These are in order from cheapest to most expensive.
+
+Storage has a variety of redundancy options. Underwater, multiple copies are made for data, although the user isn't exposed to this. Storage redundancy can be in a single region (locally redundant , zone redundant), or multiple regions (geo-redundant, geo-zone-redundant)
+
+There are several data transfer services. AzCopy is a command line utility for moving blobs and files. Storage Explorer has a GUI, and is a downloaded application, and can transfer all storage types. Azure File Sync is for synchronizing files with on-premise file servers. 
+
+Azure Data Box is a service where microsoft will literally send you a "box", where you upload your data to, which Microsoft will then upload to Azure for you.
+
+Azure Migrate is specifically for migrating non-Azure data into Azure.

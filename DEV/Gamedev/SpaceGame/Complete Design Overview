@@ -1,0 +1,32 @@
+Spacegame is a relatively complex game. There are multiple systems present in the game that may interact with eachother, ie enemy ai and combat, dialogue and progression. This document attempts to give a complete overview of all systems in the game.
+
+1. General game structure
+
+Upon starting spacegame, the following options are presented:
+    1. New game
+    2. Continue
+    3. Settings
+    4. Credits
+    5. Exit game
+
+When is game, the following options are provide:
+    1. Save game
+    2. Load game
+    3. Settings
+    4. New game
+    5. Close game
+
+Saving is done at automatic checkpoints, with the option of saving manually.
+
+2. Movement & Combat
+
+3. Navigation
+Spacegame is a linear, quasi-open game. Some areas are open navigable spaces, where the player roams freely to points of interest. Some levels have an explicit sense of diretion, ie a section of enemies that need to be traversed, an exit to be reached, or a point of interest that needs to be reached within a short span of time.
+
+4. Ship building
+
+Of the rebel faction, ships tend to be repurposed utility vehicles. As such, they tend to be hatched together from stolen, repurposed, and improvised source. The component system should reflect this.
+
+5. Dialogue and story interaction
+
+6. Other systems

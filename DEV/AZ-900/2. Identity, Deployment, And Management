@@ -1,0 +1,49 @@
+Authentication relies on SSH keys and SSL certificates, as well as email/username/password logins. Identity is the unique identifier for an object. Authentication proves that identity. Authorization gives that identity specific rights and permissions.
+
+Microsoft Entra is a product family within Azure. It includes Azure AD, Permissions Management, and Verified ID.
+
+Azure AD (active directory), currently known as Microsoft Entra ID, is the cloud identity and access management solution within Azure. It allows for a simplified SSO experiences. It lists a bunch of users. These can be put into various groups. Entra connect is the tool used to import users into Entra. Only one instance of Connect can copy at a time. Microsoft ID is the source of truth for this flow. Regular ol' Active Directory is the predecessor to Entra ID, being non-cloud based.
+
+Azure Active Directory Domain Services is an expansion upon regular Entra ID. It supports older and legacy methods of authentication, and allows Entra ID to connect with them.
+
+Every Azure account will have an Entra ID service. A tenant is a dedicated instance of Entra ID, and represents a specific organization. A user can be a member of up to 500 tenants. Resources will belong to a specific subscription, which is a billing entity. 
+
+A trusted perimeter is a specific network within which users can access Azure cloud services. This should ideally be as restricted as possible for security reasons. In the case of remote work, a VPN is often prefered so that a user can connect to the corporate network without potentially exposing their activity.
+
+Zero Trust is the principle that nobody is trusted as a baseline. Identities are given access on an as-needed basis, and are authenticated.
+
+Conditional Access Policies are rules within Azure that grant or block access. They apply to specific users. They can include signals / conditions like IP, MFA, being a specific user or belonging to a specific group, and being on an approved device.
+
+Role Based Access Control (RBAC) is the ability to have roles define what users have access to which resources. Roles may be built in or custom. Roles may also inherit from other roles. Best practices include that of least privilege, role segregation, avoiding permission sprawl, and auditing permissions.
+
+Methods of passwordless authentication can include biometrics, physical objects like a device or a key fob or a security key, and authenticators.
+
+External users will sometimes need access to Azure. Rather than temporarilly adding this person as a conventional user, we add them through Entra External ID. There are two versions of this, For Partners, and For Customers. The former uses the Entra ID of another organization to authenticate their users. For Customers uses an external provider, like google or facebook, to authenticate a user.
+
+The Azure Resource Manager (ARM) is the tool used to manage resources in Azure. It is the GUI for managing Azure. ARM Templates can be used to ensure deployments are consistent. It can be visually customized to users, including visuals, as well as which resources are easily available.
+
+Azure Powershell is strongly based off of powershell. Azure CLI is an executable package, and can be used in any shell. It is UNIX style, meaning that it's rather terse and concise.
+
+Password hash synch is the secure password protocol used by Entra ID. It sends a hash of a hash, per user salting, with 1000 iterations of HMAC-SHA256 applied to it. Pretty overkill, to be honest. It allows for a few abilies, namely:
+Break Glass - Switch to cloud auth if the primary authentication method is compromised.
+Smart Lockout - Keep out bad actors
+Breach Replay Protection - Allows MS to detect if credentials are leaked on the web.
+
+Cloud-only authentication provides the most features within Azure. The organization is not involved in this process, with Azure locally performing the authentication. Changes made in AD may take up to 30 minutes to be reflected in Entra ID.
+
+Hybrid authentication methods include Pass-Through authentication, where logins are validated against AD. Federation sends the username/password to a federated service. Federation was originally the prefered login method, but it required a lot of on premise infrastructure. It is still available, but not preferred.
+
+Bicep is an anternative format to Json that is more human readible. It can be used to make ARM templates. 
+
+There is no cost difference between authentication methods. You'll generally only want to use Federation if there are sign in requirements that Intra ID does not natively support. 
+
+SSO unfortunately has a couple of different meanings, but the preferred one is Single Sign On. Seamless Sign-On is also a viable model, where the user authenticates on premises, and can then access cloud resources. Single Sign On is fully cloud based. Both of these allow you to not have to reuse a login. 
+
+Entra ID Connect Health provides information for Azure Entra ID authentications. It shows any errors, and can automatically email and alert people in case of an issue.
+
+
+Policies can include:
+    Sign-in
+    Sign-up
+    Profile editing
+    Password reset

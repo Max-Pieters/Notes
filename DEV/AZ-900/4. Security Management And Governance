@@ -1,0 +1,24 @@
+Cost management is a set of financial tools within Azure to track and analyze the resource usage and expenditures within Azure. Expenditure is organized by management group.
+
+A management has multiple subscriptions, which has multiple resource groups, which has multiple resources. A subscription offer may be pay-as-you-go, enterprise agreement (discount with certain usage commitments), Azure dev/test (discount for testing environmnet), and free (for certain services).  An instance may also be reserved for a discount.
+
+The Pricing Calculator, as well as the Total Cost of Ownership calculator, can be used to estimate the cost within Azure, and the costs of transition.
+
+Governence and Compliance are essential qualities for legaly operating within a locality. 
+
+Azure Policy is used to create and enforce rules over the Azure resources and services. It consists of conditions and effects. Furthermore, a condition consists of parameters (what the policy is) and assignment (where it is performed). Effects have an audit, and an encorcement. Policies are expressed as JSON files. Without Azure Policy, there is no governence or compliance within Azure.
+
+Resource locks restrict access and modification of resources from other resources. A lock can be read only, or no-delete. It can be applied within the Portal, the CLI, or Powershell. Locks are applied to all resources within a scope.
+
+Microsoft Purview provides compliance tools, does risk assessment, and makes recommendations based on the state of Azure on how to improve security.
+
+Microsoft Defender is essentially a security scanner, like Windows Defender for viruses, that analysizes Azure for security issues, and makes suggestions for fixing issues.
+
+Azure Automation is exactly what it sounds like. It can automate certain tasks. Among it's capabilities is automatically performing security responses, enforcing policy, reporting on configuration sprawl, and implementing desired state configuration.
+
+Azure Security Advisor allows you to get an overview of your current security. It includes: availability, security, performance, operational excellence, and cost.
+
+Azure Monitor is EXACTLY what it sounds like.
+
+Azure Log Analytics monitors and logs actions, warnings, and errors within Azure. This is then consolidated so that the user can query it effectively. It uses the Kusto Query Language. It has metrics, which are alerts based on real time metrics. Logs are based off of specific queries run at regular intervals. Finally, activities are monitored at subscription level events.
+

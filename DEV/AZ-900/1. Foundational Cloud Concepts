@@ -1,0 +1,22 @@
+Cloud computing is the delivery of computing services over the internet. Instead of hosting your own servers, databases, load balancers and what not, you merely rent out some computer power from a provider, notable Microsoft Azure, Amazon AWS, and Google Cloud. You pay on an as needed basics. This simplifies and clears up responsibility of the developer.
+
+Clouds can be private or public, defining whether only the customer can access it or not. A private cloud is essentially the same as hosting a private network in a company. A public cloud is hosted by third party providers. Public clouds are a bit less secure and more complex. A hybrid cloud is a combination of the two.
+
+The main cloud service types are
+    - infrastructure (IaaS). This relies on giving access to physical resources. It is pretty much just a hosted VM. A virtual machine is a simulated computer, emulating both the operating system and hardware.
+
+    - platform (Paas). It provides several tools on top of IaaS.
+    
+    - software (Saas). This is any application hosted in the cloud. It is the most common type of cloud service. In addition to PaaS, it can also have an actual operating system, as well as development tools, databases, analytics tools, and other features. A PaaS may also be "Serverless", which is a misleading term, which abstracts the service running on a server away. SaaS are simply application that runs on the cloud. You'll actually not be using SaaS, but creating it most of the time as a developer.
+    
+Cloud computing is highly scalable and available. This allows for very low downtime in case one part of the server network breaks down. A cluster of servers, in combination with a load balancer, is generally very reliable. Cloud vendors will generally make uptime guarentees, and will provide credits in case these are not met. The predictable nature of a cloud service comes from compute resources being readily available, as well as the pricing of these resources being predictable. 
+
+Scaling out generally refers to adding more resources to work in parallel with eachother. This generally involves adding more VMs. Scaling up involves upgrading the existing resources. This involves some amount of down time. Scaling out is generally how most cloud based scaling works.
+
+The reliability of cloud computing comes from not having a single point of failure. There are several copies of a resource that is distributed across multiple systems. If a local instance fails, it can automatically shift to other instances.
+
+You are still expected to correctly design your application to make use of the cloud platform. This involves making use of multiple areas, not having a single point of failure, and only making use of services that you need.
+
+There is also security in cloud platforms, as they provide control over security levels, as well as fined grained security controls like firewalls. They allow for good governance, as the cloud vendors spend a lot of effort on applying legal and business standards and best practices.
+
+To summarize, the benifits of cloud computing including the ability to automate the creation of resources, and to do so instantly without much worry for scaling. Decentralization allows for great availability, managability, governance, reliability, predictability, and security. 
