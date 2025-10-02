@@ -1,1 +1,27 @@
+Course page 
 https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-1-kinematics/
+
+Long lectures
+https://www.youtube.com/watch?v=GtOGurrUPmQ&list=PLyQSN7X0ro203puVhQsmCj9qhlFQ-As8e&index=2
+
+
+Week 1
+Kinematics vs Dynamics
+Kinematics: The study of the geometry of motion. How things move in domensions of space over time.
+Dynamics: The why of how things move. 
+The three basic qualities of kinematics are position, speed, and acceleration.
+
+All of space can be described by unit vectors. The commonly used coordinate system in physics is the cartesian coordinate system. Here, all positions are described in relation to an infinite span of points seperated by a unit vector of 1 in each direction. A vector can be described as A, with an arbitrary number of dimensions. The magnitude of a vector is |A|.
+
+In addition to the fairly intuitive subtraction and addition of vectors, there is also the dot (*) and cross (x) products. The former being the sum of pairwise products of vectors. The latter is more complicated.
+A * B = |A||B| cos θ 
+|C|^2 = |A|^2 + |B|^2 + 2|A||B|cos θ
+Where o is the angle between A and B.
+
+Displacement vectors are vectors represent a change between two values. They are usually pure quantities. 
+
+Solving problems
+1. How many objects are moving, and what are the dimensions involved?
+2. What are the stages of motion for each object?
+3. Are there any special conditions on the motion?
+

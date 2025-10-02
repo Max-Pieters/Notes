@@ -27,6 +27,22 @@ Spacegame is a linear, quasi-open game. Some areas are open navigable spaces, wh
 
 Of the rebel faction, ships tend to be repurposed utility vehicles. As such, they tend to be hatched together from stolen, repurposed, and improvised source. The component system should reflect this.
 
+Attatching a component should have the following conditions:
+1. Stat upgrades (ie +10 acceleration)
+2. Special abilities (ie dash ability)
+3. Cost  (Potential to explode)
+4. Limitations (can only be attached to)
+
 5. Dialogue and story interaction
 
 6. Other systems
+
+Appendix A: Ship Components
+
+Weapons
+Gravity gun. Allows the ship to pick up objects and launch them
+Shrapnel gun. Launch a bunch of scrap, shotgun style.
+Graber arm. Grab enemy and CRUSH
+Missile. Slow moving explosive projectile
+Beam. Low damage instant contact
+Laser
