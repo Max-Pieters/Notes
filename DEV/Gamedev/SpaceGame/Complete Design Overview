@@ -16,12 +16,50 @@ When is game, the following options are provide:
     4. New game
     5. Close game
 
+Settings include
+    Audio
+        Audio levels (SFX, Music, Voice, Overall)
+    Display
+        Resolution (3840×2160, 2560×1440, 1920x1080, 1366x768, ...)
+        Max frame rate
+    Performance features
+        Turn off certain effects
+        ...
+    Controls
+    Accessability features
+        Font / text size
+        High contrast mode
+        Colour blind mode
+    Language
+
 Saving is done at automatic checkpoints, with the option of saving manually.
 
 2. Movement & Combat
 
-3. Navigation
+Space game allows for complete 3 dimensional movement. This means being able to change both position and rotation on all axis. All controls are re-bindable. There should be good, tested default controls for common interfaces, namely keyboards and 8th + 9th generation cosole controllers.
+
+Movement will not be physics based. This means that the movement of objects is not built on any physics model attempting to emulate reality with friction, air resistance, and complex colissions. Movement is largely momentum based. After acceleration, speed will be preserved. The player has the ability to halt to a complete standstill.
+
+Ships have the ability to dash. This is a significant boost in speed that lasts for a short moment. This dash then has a recharge period, during which it cannot be used.
+
+Combat consists of getting into confrontations with enemy ships. Enemy AI is based off of behaviour modes. These include:
+    1. Idle / patrolling
+    2. Alerted
+    3. Combat
+    4. Fleeing
+In addition to these categories, ships can interact and apply different strategies when in groups, depending on roles. These may include being aggressive, defensive, stealthy, etc.
+
+Combat is performed by making use of weapons. See appendix A for specific weapon descriptions. When a ship is destroyed, the player ship may be able to collect scrap, fuel, and even entire components.
+
+Weapons may have multiple modes, one for single press, and another for double pressing and / or holding the mouse. Combat should be quick and responsive, with minimal latency when possible.
+
+[M] Lock-on system. The player should be able to lock on to close enemies in order to stike enemies. This would make aiming significantly easier. This might remove skill, gaining controlability in the process.
+
+1. Navigation
+
 Spacegame is a linear, quasi-open game. Some areas are open navigable spaces, where the player roams freely to points of interest. Some levels have an explicit sense of diretion, ie a section of enemies that need to be traversed, an exit to be reached, or a point of interest that needs to be reached within a short span of time.
+
+Moving between areas is done by reaching "jump boundaries". These are boundaries within the environment which, when surpassed, give the option to travel to a different area. This results in a transition animation being played. If the dash in not performed, the player ship will be automatically turned around.
 
 4. Ship building
 
@@ -33,16 +71,78 @@ Attatching a component should have the following conditions:
 3. Cost  (Potential to explode)
 4. Limitations (can only be attached to)
 
+When editing, a reflection of the ships stats should be displayed.
+    - Each specific stat should be displayed by a bar
+    - Before changing components, a preview of the change in stats should be shown
+    - A "nerd" stats view should be available, showing exact stats of components
+    - Special abilities should EITHER/OR
+      - Be described by a brief description
+      - Have a symbol representing it
+
 5. Dialogue and story interaction
 
-6. Other systems
+The dialogue system allows for branching choices which can inform future dialogue and other story decisions. The dialogue itself is communicated through a visual display. Given enough resources, this will be voice acted. Additionally, there are dialogue portraits used to show characters. As we will not be showing characters directly in world, this will help give the player an impression of them.
+
+6. Environment
+
+There will be various celestial bodies and systems visible in space game, some of which are interactable. These include, but are not limited to:
+    - Black holes
+    - Suns
+    - Planets (with optional disks)
+    - Asteroids
+
+Planets will have visible atmospheres.
+
+All outdoor locations will have a skybox.
+
+Some locations will occur on or near the surface of a planet
+
+7. Other systems
 
 Appendix A: Ship Components
 
 Weapons
-Gravity gun. Allows the ship to pick up objects and launch them
-Shrapnel gun. Launch a bunch of scrap, shotgun style.
-Graber arm. Grab enemy and CRUSH
-Missile. Slow moving explosive projectile
-Beam. Low damage instant contact
-Laser
+
+Ranged
+    Plasma beam
+    - Shoots a beam of charged glowing, charged plasma
+    - The beam takes time to travel
+    Laser
+    - Low damage, instant contact
+    - Should have a vissible beam
+    - This should slow down the ship, with automatic rotation, to make shooting viable
+    - Dashing should allow the harmed ship to escape the beam temporarily
+    Shrapnel gun. Launch a bunch of scrap, shotgun style.
+    - Slow moving projectiles with a spread
+    Missile. Slow moving explosive projectile
+    - A missile object should be launched
+    - The missile should potentially lock on to a nearby enemys
+    - Upon contact, the missile should explode to deal damage
+
+Melee
+    Graber arm. Grab enemy and CRUSH
+    - Grab nearby enemy. This should deal significant damage to the ship
+    - Might dismember a component
+    Ram head
+    - Allows the ship to, when hitting the enemy, deal massive damage
+    - Decreases manouverability somewhat
+    Suicide bomb
+    - Explodes on contact for near fatal damage for both parties
+    - Mostly a gag weapon for the player, serious business when on enemies
+
+Special weapons
+    Gravity gun
+    - Allows the ship to pick up objects and launch them
+
+Misc components
+    Telescope
+    - Zoom into an area
+    Space radio
+    - Listen in to specialty radio at certain points
+    - Play your own songs?
+    Stealth module
+    - Makes a ship invisible (or near invisible) to most ships for some time
+    - Very resource intensive
+    Protective shield
+    - Blocks laser weapon damage, and partially obsorbed missiles / shrapnel
+    - Wears down over time. When knocked out of commission, takes a while to recharge
