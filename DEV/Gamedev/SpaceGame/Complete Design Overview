@@ -23,14 +23,22 @@ Settings include
         Resolution (3840×2160, 2560×1440, 1920x1080, 1366x768, ...)
         Max frame rate
     Performance features
-        Turn off certain effects
+        Lighting model
+        Texture quality
         ...
     Controls
+        Keyboard controls
+        Mouse controls
+        Sensitivity
+        Deadzone
     Accessability features
         Font / text size
         High contrast mode
         Colour blind mode
     Language
+
+Controls should be maximally configurable. Steam's controller support should be followed.
+https://partner.steamgames.com/doc/features/steam_controller/device?language=english
 
 Saving is done at automatic checkpoints, with the option of saving manually.
 
@@ -39,6 +47,13 @@ Saving is done at automatic checkpoints, with the option of saving manually.
 Space game allows for complete 3 dimensional movement. This means being able to change both position and rotation on all axis. All controls are re-bindable. There should be good, tested default controls for common interfaces, namely keyboards and 8th + 9th generation cosole controllers.
 
 Movement will not be physics based. This means that the movement of objects is not built on any physics model attempting to emulate reality with friction, air resistance, and complex colissions. Movement is largely momentum based. After acceleration, speed will be preserved. The player has the ability to halt to a complete standstill.
+
+Movement feel is essential. This movement should be reflected in the representation of the ship (ie enginges activated during acceleration), as well as peripheral effects in the UI and the screen (ie screen shake). A state-based movement system will be implemented. Somes states include, but are not limited to:
+    1. Still
+    2. Accelerating
+    3. Cruising at speed
+    4. Dashing
+    5. Charging weapon
 
 Ships have the ability to dash. This is a significant boost in speed that lasts for a short moment. This dash then has a recharge period, during which it cannot be used.
 
@@ -49,9 +64,7 @@ Combat consists of getting into confrontations with enemy ships. Enemy AI is bas
     4. Fleeing
 In addition to these categories, ships can interact and apply different strategies when in groups, depending on roles. These may include being aggressive, defensive, stealthy, etc.
 
-Combat is performed by making use of weapons. See appendix A for specific weapon descriptions. When a ship is destroyed, the player ship may be able to collect scrap, fuel, and even entire components.
-
-Weapons may have multiple modes, one for single press, and another for double pressing and / or holding the mouse. Combat should be quick and responsive, with minimal latency when possible.
+Combat is performed by making use of weapons. See appendix A for specific weapon descriptions. When a ship is destroyed, the player ship may be able to collect scrap, fuel, and even entire components. Weapons may have multiple modes, one for single press, and another for double pressing and / or holding the mouse. Combat should be quick and responsive, with minimal latency when possible.
 
 [M] Lock-on system. The player should be able to lock on to close enemies in order to stike enemies. This would make aiming significantly easier. This might remove skill, gaining controlability in the process.
 
@@ -91,11 +104,7 @@ There will be various celestial bodies and systems visible in space game, some o
     - Planets (with optional disks)
     - Asteroids
 
-Planets will have visible atmospheres.
-
-All outdoor locations will have a skybox.
-
-Some locations will occur on or near the surface of a planet
+Planets will have visible atmospheres. All outdoor locations will have a skybox. Some locations will occur on or near the surface of a planet
 
 7. Other systems
 
