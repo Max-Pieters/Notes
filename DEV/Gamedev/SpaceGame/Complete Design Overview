@@ -37,6 +37,8 @@ Settings include
         Colour blind mode
     Language
 
+There will be a flag based progress system for tracking progress and choices.
+
 Controls should be maximally configurable. Steam's controller support should be followed.
 https://partner.steamgames.com/doc/features/steam_controller/device?language=english
 
@@ -132,6 +134,7 @@ Melee
     Graber arm. Grab enemy and CRUSH
     - Grab nearby enemy. This should deal significant damage to the ship
     - Might dismember a component
+        + Punching arm
     Ram head
     - Allows the ship to, when hitting the enemy, deal massive damage
     - Decreases manouverability somewhat
