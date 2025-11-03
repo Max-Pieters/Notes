@@ -3,18 +3,17 @@ Spacegame is a relatively complex game. There are multiple systems present in th
 1. General game structure
 
 Upon starting spacegame, the following options are presented:
-    1. New game
-    2. Continue
+    1. Continue
+    2. New Game (if save file is detected)
     3. Settings
     4. Credits
     5. Exit game
 
 When is game, the following options are provide:
-    1. Save game
-    2. Load game
+    1. Continue 
+    2. New Game 
     3. Settings
-    4. New game
-    5. Close game
+    4. Close game
 
 Settings include
     Audio

@@ -1,0 +1,5 @@
+Containers are light, virtualized environments. They are significantly lighter than virtual machines. The big difference is that a container does not emulate hardwarer in any way. They are deployed using scripts. Docker is one of the most common tools for working with containers. Running a container will start up an operating system.
+
+Docker only runs on Linux. When it is run on Windows or Mac, it is run on a lightweight virtual machine.
+
+The Docker Deamon is a configuration within Docker. It allows to you specify specific detail. 
